@@ -151,6 +151,15 @@ namespace AppUserManagementSystem.UI
                 cmd.ExecuteReader();
                 con.Close();
 
+
+                if (StatusCombo.Text == "Active")
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string qs1 = "UPDATE Users1 SET ActiveDate = @date where UserId = '" + userid + "'";
+                cmd = new SqlCommand(qs1, con);
+                cmd.ExecuteReader();
+                con.Close();
+
             }
 
             catch (Exception ere)
