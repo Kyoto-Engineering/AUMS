@@ -141,6 +141,8 @@ namespace AppUserManagementSystem.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+  
             try
             {
 
@@ -148,17 +150,97 @@ namespace AppUserManagementSystem.UI
                 con.Open();
                 string qs = "UPDATE Users1 SET StatusID = '" + statusId + "' where UserId = '"+ userid +"'";
                 cmd = new SqlCommand(qs, con);
-                cmd.ExecuteReader();
+                cmd.ExecuteScalar();
                 con.Close();
 
 
-                if (StatusCombo.Text == "Active")
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string qs1 = "UPDATE Users1 SET ActiveDate = @date where UserId = '" + userid + "'";
-                cmd = new SqlCommand(qs1, con);
-                cmd.ExecuteReader();
-                con.Close();
+                if (statusId == 1)
+                {
+                    con = new SqlConnection(cs.DBConn);
+                    con.Open();
+                    string qs1 = "UPDATE Users1 SET ActiveDate = @date where UserId = '" + userid + "'";
+                    cmd = new SqlCommand(qs1, con);
+
+                    cmd.Parameters.AddWithValue("@date", DateTime.UtcNow.ToLocalTime());
+                    //cmd.Parameters.AddWithValue("@date1", DBNull.Value);
+
+
+                    //cmd.Parameters.AddWithValue("@date1", DateTime.UtcNow.ToLocalTime());
+                    //cmd.Parameters.AddWithValue("@date", DBNull.Value);
+
+
+
+                    cmd.ExecuteScalar();
+                    con.Close();
+
+                    con = new SqlConnection(cs.DBConn);
+                    con.Open();
+                    string qs3 = "UPDATE Users1 SET InactiveDate = @date3 where UserId = '" + userid + "'";
+                    cmd = new SqlCommand(qs3, con);
+
+                   // cmd.Parameters.AddWithValue("@date3", DateTime.UtcNow.ToLocalTime());
+                    cmd.Parameters.AddWithValue("@date3", DBNull.Value);
+
+
+                    //cmd.Parameters.AddWithValue("@date1", DateTime.UtcNow.ToLocalTime());
+                    //cmd.Parameters.AddWithValue("@date", DBNull.Value);
+
+
+
+                    cmd.ExecuteScalar();
+                    con.Close();
+
+
+
+                }
+
+                else if (statusId == 2)
+                {
+                    con = new SqlConnection(cs.DBConn);
+                    con.Open();
+                    string qs2 = "UPDATE Users1 SET InactiveDate = @date1 where UserId = '" + userid + "'";
+                    cmd = new SqlCommand(qs2, con);
+
+                    cmd.Parameters.AddWithValue("@date1", DateTime.UtcNow.ToLocalTime());
+                    //cmd.Parameters.AddWithValue("@date1", DBNull.Value);
+
+
+                    //cmd.Parameters.AddWithValue("@date1", DateTime.UtcNow.ToLocalTime());
+                    //cmd.Parameters.AddWithValue("@date", DBNull.Value);
+
+
+
+                    cmd.ExecuteScalar();
+                    con.Close();
+
+                    con = new SqlConnection(cs.DBConn);
+                    con.Open();
+                    string qs4 = "UPDATE Users1 SET ActiveDate = @date4 where UserId = '" + userid + "'";
+                    cmd = new SqlCommand(qs4, con);
+
+                   // cmd.Parameters.AddWithValue("@date4", DateTime.UtcNow.ToLocalTime());
+                    cmd.Parameters.AddWithValue("@date4", DBNull.Value);
+
+
+                    //cmd.Parameters.AddWithValue("@date1", DateTime.UtcNow.ToLocalTime());
+                    //cmd.Parameters.AddWithValue("@date", DBNull.Value);
+
+
+
+                    cmd.ExecuteScalar();
+                    con.Close();
+
+                }
+                MessageBox.Show("Status given Done");
+                usernametxtbox.Clear();
+                fullnametxtbox.Clear();
+                designationtxtbox.Clear();
+                currentstatustxtbox.Clear();
+                StatusCombo.Items.Clear();
+                Statusload();
+                dataGridView1.Rows.Clear();
+                dataGridView1.Refresh();
+                usergrdload();
 
             }
 
@@ -166,17 +248,19 @@ namespace AppUserManagementSystem.UI
             {
                 MessageBox.Show(ere.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
+         
 
-            MessageBox.Show("Status given Done");
-            usernametxtbox.Clear();
-            fullnametxtbox.Clear();
-            designationtxtbox.Clear();
-            currentstatustxtbox.Clear();
-            StatusCombo.Items.Clear();
-            Statusload();
-            dataGridView1.Rows.Clear();
-            dataGridView1.Refresh();
-            usergrdload();
+
+            //MessageBox.Show("Status given Done");
+            //usernametxtbox.Clear();
+            //fullnametxtbox.Clear();
+            //designationtxtbox.Clear();
+            //currentstatustxtbox.Clear();
+            //StatusCombo.Items.Clear();
+            //Statusload();
+            //dataGridView1.Rows.Clear();
+            //dataGridView1.Refresh();
+            //usergrdload();
 
 
 
