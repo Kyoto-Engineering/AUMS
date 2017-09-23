@@ -41,7 +41,7 @@ namespace AppUserManagementSystem.UI
            
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string q1 = "SELECT Users1.UserName, Users1.FullName, Designations.Designation, StatusTable.StatusName, Users1.UserId  FROM Users1 LEFT OUTER JOIN Designations ON Users1.DesignationId = Designations.DesignationId LEFT OUTER JOIN StatusTable ON Users1.StatusID =  StatusTable.StatusID";
+                string q1 = "SELECT Users.UserName, Users.FullName, Designations.Designation, StatusTable.StatusName, Users.UserId  FROM Users LEFT OUTER JOIN Designations ON Users.DesignationId = Designations.DesignationId LEFT OUTER JOIN StatusTable ON Users.StatusID =  StatusTable.StatusID";
                 cmd = new SqlCommand(q1, con);
                 rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 dataGridView1.Rows.Clear();
@@ -148,7 +148,7 @@ namespace AppUserManagementSystem.UI
 
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string qs = "UPDATE Users1 SET StatusID = '" + statusId + "' where UserId = '"+ userid +"'";
+                string qs = "UPDATE Users SET StatusID = '" + statusId + "' where UserId = '"+ userid +"'";
                 cmd = new SqlCommand(qs, con);
                 cmd.ExecuteScalar();
                 con.Close();
@@ -158,7 +158,7 @@ namespace AppUserManagementSystem.UI
                 {
                     con = new SqlConnection(cs.DBConn);
                     con.Open();
-                    string qs1 = "UPDATE Users1 SET ActiveDate = @date where UserId = '" + userid + "'";
+                    string qs1 = "UPDATE Users SET ActiveDate = @date where UserId = '" + userid + "'";
                     cmd = new SqlCommand(qs1, con);
 
                     cmd.Parameters.AddWithValue("@date", DateTime.UtcNow.ToLocalTime());
@@ -175,7 +175,7 @@ namespace AppUserManagementSystem.UI
 
                     con = new SqlConnection(cs.DBConn);
                     con.Open();
-                    string qs3 = "UPDATE Users1 SET InactiveDate = @date3 where UserId = '" + userid + "'";
+                    string qs3 = "UPDATE Users SET InactiveDate = @date3 where UserId = '" + userid + "'";
                     cmd = new SqlCommand(qs3, con);
 
                    // cmd.Parameters.AddWithValue("@date3", DateTime.UtcNow.ToLocalTime());
@@ -198,7 +198,7 @@ namespace AppUserManagementSystem.UI
                 {
                     con = new SqlConnection(cs.DBConn);
                     con.Open();
-                    string qs2 = "UPDATE Users1 SET InactiveDate = @date1 where UserId = '" + userid + "'";
+                    string qs2 = "UPDATE Users SET InactiveDate = @date1 where UserId = '" + userid + "'";
                     cmd = new SqlCommand(qs2, con);
 
                     cmd.Parameters.AddWithValue("@date1", DateTime.UtcNow.ToLocalTime());
@@ -215,7 +215,7 @@ namespace AppUserManagementSystem.UI
 
                     con = new SqlConnection(cs.DBConn);
                     con.Open();
-                    string qs4 = "UPDATE Users1 SET ActiveDate = @date4 where UserId = '" + userid + "'";
+                    string qs4 = "UPDATE Users SET ActiveDate = @date4 where UserId = '" + userid + "'";
                     cmd = new SqlCommand(qs4, con);
 
                    // cmd.Parameters.AddWithValue("@date4", DateTime.UtcNow.ToLocalTime());

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AppUserManagementSystem.DbGateway
 {
-    class ConnectionGateway
+    public class ConnectionGateway
     {
         protected SqlConnection connection;
         string connectionString = @"server=tcp:KyotoServer,49172; Integrated Security = SSPI; database =KeyRegistar_ForTest;Connect Timeout=30";

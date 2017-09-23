@@ -46,6 +46,19 @@
   <ItemGroup>
     <Compile Include="DbGateway\ConnectionGateway.cs" />
     <Compile Include="DbGateway\ConnectionString.cs" />
+    <Compile Include="Log in Ui\Loginuiaums.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log in Ui\Loginuiaums.Designer.cs">
+      <DependentUpon>Loginuiaums.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="UI\Countries.cs" />
+    <Compile Include="UI\Designations.cs" />
+    <Compile Include="UI\EmailAddress.cs" />
+    <Compile Include="UI\Gender.cs" />
     <Compile Include="UI\MainUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,12 +67,40 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\MaritalStatus.cs" />
+    <Compile Include="UI\OverSeasAddress.cs" />
+    <Compile Include="UI\PerManantAddress.cs" />
+    <Compile Include="UI\PresentAddress.cs" />
+    <Compile Include="UI\UserCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserCreation.Designer.cs">
+      <DependentUpon>UserCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserCreationUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserCreationUI.Designer.cs">
+      <DependentUpon>UserCreationUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserEmail.cs" />
+    <Compile Include="UI\UserGateway.cs" />
+    <Compile Include="UI\UserManager.cs" />
+    <Compile Include="UI\Users.cs" />
     <Compile Include="UI\UserStatusUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\UserStatusUI.Designer.cs">
       <DependentUpon>UserStatusUI.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Log in Ui\Loginuiaums.resx">
+      <DependentUpon>Loginuiaums.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\AppUserManagementSystem.MainUI.resources" />
+    <EmbeddedResource Include="obj\Debug\AppUserManagementSystem.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\AppUserManagementSystem.UI.UserCreation.resources" />
+    <EmbeddedResource Include="obj\Debug\AppUserManagementSystem.Ui.UsercreationUi.resources" />
+    <EmbeddedResource Include="obj\Debug\AppUserManagementSystem.Ui.UserStatusUI.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -73,9 +114,23 @@
     <EmbeddedResource Include="UI\MainUI.resx">
       <DependentUpon>MainUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserCreation.resx">
+      <DependentUpon>UserCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserCreationUI.resx">
+      <DependentUpon>UserCreationUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UserStatusUI.resx">
       <DependentUpon>UserStatusUI.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\AppUserManagementSystem.exe.config" />
+    <None Include="bin\Debug\AppUserManagementSystem.vshost.exe.config" />
+    <None Include="bin\Debug\AppUserManagementSystem.vshost.exe.manifest" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="obj\Debug\AppUserManagementSystem.csproj.GenerateResource.Cache" />
+    <None Include="obj\Debug\AppUserManagementSystem.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -90,10 +145,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Log in Ui\" />
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\whitey-glossy-rectangle-button-md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AppUserManagementSystem.exe" />
+    <Content Include="bin\Debug\AppUserManagementSystem.pdb" />
+    <Content Include="bin\Debug\AppUserManagementSystem.vshost.exe" />
+    <Content Include="obj\Debug\AppUserManagementSystem.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\AppUserManagementSystem.exe" />
+    <Content Include="obj\Debug\AppUserManagementSystem.pdb" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\cloudCopy.png" />
+    <None Include="Resources\greenbutton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

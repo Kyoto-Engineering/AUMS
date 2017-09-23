@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppUserManagementSystem.Log_in_Ui;
 
 namespace AppUserManagementSystem
 {
@@ -16,7 +17,7 @@ namespace AppUserManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainUI());
+            Application.Run(new Loginuiaums());
         }
     }
 }

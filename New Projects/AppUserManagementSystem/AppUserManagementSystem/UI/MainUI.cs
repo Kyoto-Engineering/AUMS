@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppUserManagementSystem.Ui;
 using AppUserManagementSystem.UI;
 
 namespace AppUserManagementSystem
@@ -23,6 +24,14 @@ namespace AppUserManagementSystem
             UserStatusUI ss = new UserStatusUI();
             this.Visible = false;
             ss.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UsercreationUi uui = new UsercreationUi();
+            this.Visible = false;
+           uui.ShowDialog();
             this.Visible = true;
         }
     }
