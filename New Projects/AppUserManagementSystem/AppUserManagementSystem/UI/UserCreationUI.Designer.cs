@@ -1379,6 +1379,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
             this.Name = "UsercreationUi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UsercreationUi";
             this.Load += new System.EventHandler(this.UsercreationUi_Load);
             this.groupBox1.ResumeLayout(false);

@@ -34,5 +34,13 @@ namespace AppUserManagementSystem
            uui.ShowDialog();
             this.Visible = true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UserDetailsGrid udg = new UserDetailsGrid();
+            this.Visible = false;
+            udg.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

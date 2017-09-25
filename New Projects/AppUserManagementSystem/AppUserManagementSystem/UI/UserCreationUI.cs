@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppUserManagementSystem.DbGateway;
+using AppUserManagementSystem.Log_in_Ui;
 
 namespace AppUserManagementSystem.Ui
 {
@@ -728,6 +729,7 @@ namespace AppUserManagementSystem.Ui
                 string body = "Your LogIn Id is:'" + txtLogInID.Text + "' and  Password is:'" + txtPassword.Text + "'.Thank you.";
                 MailMessage msg = new MailMessage();
                 msg.From = new MailAddress(emailAddressFrom, "Kyoto Engineering & Automation Ltd");
+                //msg.From = new MailAddress("iqbalbdrocky@gmail.com");
                 msg.To.Add(new MailAddress(emailAddresTo));
                 msg.Subject = "User Id & Password";
                 msg.Body = body;
@@ -742,6 +744,7 @@ namespace AppUserManagementSystem.Ui
 
                     smtp.Host = smtpHost;
                     smtp.Credentials = new NetworkCredential(emailAddressFrom, txtFormPassword.Text);
+                    //smtp.Credentials = new NetworkCredential("iqbalbdrocky@gmail.com", txtFormPassword.Text);
                     smtp.EnableSsl = true;
                     smtp.Send(msg);
 
@@ -856,7 +859,7 @@ namespace AppUserManagementSystem.Ui
             groupBox4.Visible = false;
             FillPresentDivisionCombo();
             FillPermanantDivisionCombo();
-            //nUserId = frmLogin.uId.ToString();
+            nUserId = Loginuiaums.uId.ToString();
             LoadCountryCode();
             CountryLoad();
             HostEmailAddress2();

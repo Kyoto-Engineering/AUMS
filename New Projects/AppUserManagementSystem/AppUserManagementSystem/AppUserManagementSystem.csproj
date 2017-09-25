@@ -46,10 +46,10 @@
   <ItemGroup>
     <Compile Include="DbGateway\ConnectionGateway.cs" />
     <Compile Include="DbGateway\ConnectionString.cs" />
-    <Compile Include="Log in Ui\Loginuiaums.cs">
+    <Compile Include="LoginUi\Loginuiaums.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Log in Ui\Loginuiaums.Designer.cs">
+    <Compile Include="LoginUi\Loginuiaums.Designer.cs">
       <DependentUpon>Loginuiaums.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -71,6 +71,12 @@
     <Compile Include="UI\OverSeasAddress.cs" />
     <Compile Include="UI\PerManantAddress.cs" />
     <Compile Include="UI\PresentAddress.cs" />
+    <Compile Include="UI\UpdateUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UpdateUI.Designer.cs">
+      <DependentUpon>UpdateUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserCreation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,12 @@
     <Compile Include="UI\UserCreationUI.Designer.cs">
       <DependentUpon>UserCreationUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UserDetailsGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserDetailsGrid.Designer.cs">
+      <DependentUpon>UserDetailsGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserEmail.cs" />
     <Compile Include="UI\UserGateway.cs" />
     <Compile Include="UI\UserManager.cs" />
@@ -93,7 +105,7 @@
     <Compile Include="UI\UserStatusUI.Designer.cs">
       <DependentUpon>UserStatusUI.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Log in Ui\Loginuiaums.resx">
+    <EmbeddedResource Include="LoginUi\Loginuiaums.resx">
       <DependentUpon>Loginuiaums.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\AppUserManagementSystem.MainUI.resources" />
@@ -114,11 +126,17 @@
     <EmbeddedResource Include="UI\MainUI.resx">
       <DependentUpon>MainUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UpdateUI.resx">
+      <DependentUpon>UpdateUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UserCreation.resx">
       <DependentUpon>UserCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserCreationUI.resx">
       <DependentUpon>UserCreationUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserDetailsGrid.resx">
+      <DependentUpon>UserDetailsGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserStatusUI.resx">
       <DependentUpon>UserStatusUI.cs</DependentUpon>
