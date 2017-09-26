@@ -83,6 +83,16 @@ namespace AppUserManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap UploadDataQ {
+            get {
+                object obj = ResourceManager.GetObject("UploadDataQ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap whitey_glossy_rectangle_button_md {
             get {
                 object obj = ResourceManager.GetObject("whitey-glossy-rectangle-button-md", resourceCulture);

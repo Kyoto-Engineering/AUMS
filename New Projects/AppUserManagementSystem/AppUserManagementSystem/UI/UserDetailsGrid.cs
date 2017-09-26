@@ -96,7 +96,7 @@ namespace AppUserManagementSystem.UI
             {
                 string k, h;
                 DataGridViewRow dr = dataGridView1.CurrentRow;
-                this.Visible = false;
+                //this.Hide();
                 UpdateUI frm = new UpdateUI();
                // frm.ShowDialog();
                // this.Visible = true;

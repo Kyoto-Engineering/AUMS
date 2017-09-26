@@ -97,6 +97,12 @@
     </Compile>
     <Compile Include="UI\UserEmail.cs" />
     <Compile Include="UI\UserGateway.cs" />
+    <Compile Include="UI\UserImageUpdateUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserImageUpdateUI.Designer.cs">
+      <DependentUpon>UserImageUpdateUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserManager.cs" />
     <Compile Include="UI\Users.cs" />
     <Compile Include="UI\UserStatusUI.cs">
@@ -138,6 +144,9 @@
     <EmbeddedResource Include="UI\UserDetailsGrid.resx">
       <DependentUpon>UserDetailsGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserImageUpdateUI.resx">
+      <DependentUpon>UserImageUpdateUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UserStatusUI.resx">
       <DependentUpon>UserStatusUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +185,7 @@
     <Content Include="obj\Debug\AppUserManagementSystem.exe" />
     <Content Include="obj\Debug\AppUserManagementSystem.pdb" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\UploadDataQ.png" />
     <None Include="Resources\cloudCopy.png" />
     <None Include="Resources\greenbutton.png" />
   </ItemGroup>

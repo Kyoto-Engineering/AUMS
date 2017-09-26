@@ -40,6 +40,14 @@ namespace AppUserManagementSystem
             UserDetailsGrid udg = new UserDetailsGrid();
             this.Visible = false;
             udg.ShowDialog();
+           this.Visible = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UserImageUpdateUI uiuui = new UserImageUpdateUI();
+            this.Visible = false;
+            uiuui.ShowDialog();
             this.Visible = true;
         }
     }
