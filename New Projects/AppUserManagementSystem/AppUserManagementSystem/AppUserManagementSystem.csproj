@@ -11,6 +11,21 @@
     <AssemblyName>AppUserManagementSystem</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,6 +88,12 @@
     <Compile Include="UI\Designations.cs" />
     <Compile Include="UI\EmailAddress.cs" />
     <Compile Include="UI\Gender.cs" />
+    <Compile Include="UI\MainmainUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainmainUI.Designer.cs">
+      <DependentUpon>MainmainUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MainUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +103,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\MaritalStatus.cs" />
+    <Compile Include="UI\NonPcUsercreationUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NonPcUsercreationUI.Designer.cs">
+      <DependentUpon>NonPcUsercreationUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NonPCusers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NonPCusers.Designer.cs">
+      <DependentUpon>NonPCusers.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\OverSeasAddress.cs" />
     <Compile Include="UI\PerManantAddress.cs" />
     <Compile Include="UI\PresentAddress.cs" />
@@ -151,8 +184,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>userprofile.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainmainUI.resx">
+      <DependentUpon>MainmainUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\MainUI.resx">
       <DependentUpon>MainUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NonPcUsercreationUI.resx">
+      <DependentUpon>NonPcUsercreationUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NonPCusers.resx">
+      <DependentUpon>NonPCusers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UpdateUI.resx">
       <DependentUpon>UpdateUI.cs</DependentUpon>
@@ -213,6 +255,23 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

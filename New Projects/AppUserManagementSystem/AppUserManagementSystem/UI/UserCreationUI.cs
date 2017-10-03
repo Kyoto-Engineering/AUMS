@@ -30,6 +30,8 @@ namespace AppUserManagementSystem.Ui
         public DateTime myDate;
         public string dbUserFullName, dbEmailAddress, currentEmailAddress;
         public int dbUserId;
+        public int catid;
+        public string catname;
         public UsercreationUi()
         {
             InitializeComponent();
@@ -192,7 +194,8 @@ namespace AppUserManagementSystem.Ui
 
                     DateOfBirth = Convert.ToDateTime(dateOfBirth.Value, System.Globalization.CultureInfo.GetCultureInfo("hi-IN").DateTimeFormat),
                     Password = readyPassword,
-                    EmpStatus = 3
+                    EmpStatus = 3,
+                    Caaatid = catid
                 };
                 ig = auManager.SaveUserDetail(aUser);
                 GetMaxUserId();
@@ -221,7 +224,7 @@ namespace AppUserManagementSystem.Ui
                     string cb = "insert into ContactNumbers(CountryCode,ContactNo,UserId) VALUES (@d1,@d2,@d3)";
                     cmd = new SqlCommand(cb, con);
                     cmd.Parameters.AddWithValue("@d1", listView1.Items[i].SubItems[1].Text);
-                    cmd.Parameters.AddWithValue("@d2", listView1.Items[i].SubItems[1].Text);
+                    cmd.Parameters.AddWithValue("@d2", listView1.Items[i].SubItems[2].Text);
                     cmd.Parameters.AddWithValue("@d3", instantUserId);
                     cmd.ExecuteReader();
                     con.Close();
@@ -868,6 +871,26 @@ namespace AppUserManagementSystem.Ui
             DesignationLoad();
             MaritalStatusLoad();
             GetGender();
+            getcat();
+        }
+
+        private void getcat()
+        {
+            con = new SqlConnection(cs.DBConn);
+            con.Open();
+            string getc = "select UsercatId, Usercatname from UserCategory where UsercatId = 1 ";
+            cmd = new SqlCommand(getc,con);
+            rdr = cmd.ExecuteReader();
+            if (rdr.Read() == true)
+            {
+                catid = rdr.GetInt32(0);
+                catname = rdr.GetString(1);
+                catidtxtbox.Text = catid.ToString();
+                catnametxtbox.Text = catname;
+            }
+            con.Close();
+
+
         }
 
         private void HostEmailAddress2()
@@ -1795,6 +1818,11 @@ namespace AppUserManagementSystem.Ui
                 cmbPrimaryDomain.ResetText();
                 // this.BeginInvoke(new ChangeFocusDelegate(changeFocus), cmbPrimaryDomain);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
 

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppUserManagementSystem.DbGateway;
+using AppUserManagementSystem.UI;
 
 namespace AppUserManagementSystem.Log_in_Ui
 {
@@ -52,7 +53,7 @@ namespace AppUserManagementSystem.Log_in_Ui
                     {
                         userType = "COO";
                         
-                        MainUI frm = new MainUI();
+                         MainmainUI frm = new MainmainUI();
                         this.Visible = false;
                         frm.ShowDialog();
                         this.Visible = true;

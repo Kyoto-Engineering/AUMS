@@ -1,6 +1,6 @@
-﻿namespace AppUserManagementSystem.Ui
+﻿namespace AppUserManagementSystem.UI
 {
-    partial class UsercreationUi
+    partial class NonPcUsercreationUI
     {
         /// <summary>
         /// Required designer variable.
@@ -36,12 +36,6 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.txtPrimaryUserPart = new System.Windows.Forms.TextBox();
-            this.txtSecondaryEmailUser = new System.Windows.Forms.TextBox();
-            this.cmbSecondaryDomain = new System.Windows.Forms.ComboBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.txtFormPassword = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtNationalId = new System.Windows.Forms.TextBox();
             this.txtBirthCertificatNo = new System.Windows.Forms.TextBox();
@@ -59,12 +53,10 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.txtNickName = new System.Windows.Forms.TextBox();
-            this.cmbPrimaryDomain = new System.Windows.Forms.ComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.addButton = new System.Windows.Forms.Button();
             this.cmbCountryCode = new System.Windows.Forms.ComboBox();
             this.txtFatherName = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
@@ -135,16 +127,18 @@
             this.txtLogInID = new System.Windows.Forms.TextBox();
             this.txtEmployeeId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.addButton = new System.Windows.Forms.Button();
             this.createUserButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.catidtxtbox = new System.Windows.Forms.TextBox();
             this.catnametxtbox = new System.Windows.Forms.TextBox();
+            this.catidtxtbox = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtFormPassword = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -156,10 +150,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.txtPrimaryUserPart);
-            this.groupBox1.Controls.Add(this.txtSecondaryEmailUser);
-            this.groupBox1.Controls.Add(this.cmbSecondaryDomain);
-            this.groupBox1.Controls.Add(this.label48);
             this.groupBox1.Controls.Add(this.label43);
             this.groupBox1.Controls.Add(this.txtFormPassword);
             this.groupBox1.Controls.Add(this.groupBox6);
@@ -173,7 +163,6 @@
             this.groupBox1.Controls.Add(this.label40);
             this.groupBox1.Controls.Add(this.label39);
             this.groupBox1.Controls.Add(this.txtNickName);
-            this.groupBox1.Controls.Add(this.cmbPrimaryDomain);
             this.groupBox1.Controls.Add(this.listView1);
             this.groupBox1.Controls.Add(this.addButton);
             this.groupBox1.Controls.Add(this.cmbCountryCode);
@@ -192,7 +181,6 @@
             this.groupBox1.Controls.Add(this.txtLogInID);
             this.groupBox1.Controls.Add(this.txtEmployeeId);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
@@ -204,10 +192,9 @@
             this.groupBox1.Location = new System.Drawing.Point(55, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1063, 667);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Information";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox4
             // 
@@ -280,61 +267,6 @@
             this.label35.TabIndex = 2;
             this.label35.Text = "Street Name  :";
             // 
-            // txtPrimaryUserPart
-            // 
-            this.txtPrimaryUserPart.Location = new System.Drawing.Point(198, 183);
-            this.txtPrimaryUserPart.Name = "txtPrimaryUserPart";
-            this.txtPrimaryUserPart.Size = new System.Drawing.Size(124, 26);
-            this.txtPrimaryUserPart.TabIndex = 6;
-            // 
-            // txtSecondaryEmailUser
-            // 
-            this.txtSecondaryEmailUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecondaryEmailUser.Location = new System.Drawing.Point(198, 214);
-            this.txtSecondaryEmailUser.Name = "txtSecondaryEmailUser";
-            this.txtSecondaryEmailUser.Size = new System.Drawing.Size(124, 24);
-            this.txtSecondaryEmailUser.TabIndex = 8;
-            // 
-            // cmbSecondaryDomain
-            // 
-            this.cmbSecondaryDomain.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbSecondaryDomain.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbSecondaryDomain.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSecondaryDomain.FormattingEnabled = true;
-            this.cmbSecondaryDomain.Location = new System.Drawing.Point(327, 214);
-            this.cmbSecondaryDomain.Name = "cmbSecondaryDomain";
-            this.cmbSecondaryDomain.Size = new System.Drawing.Size(117, 25);
-            this.cmbSecondaryDomain.TabIndex = 9;
-            this.cmbSecondaryDomain.SelectedIndexChanged += new System.EventHandler(this.cmbSecondaryDomain_SelectedIndexChanged);
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(27, 214);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(164, 22);
-            this.label48.TabIndex = 70;
-            this.label48.Text = "Secondary Email   ";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(492, 626);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(216, 20);
-            this.label43.TabIndex = 69;
-            this.label43.Text = "Sender  Emai Password ";
-            // 
-            // txtFormPassword
-            // 
-            this.txtFormPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFormPassword.Location = new System.Drawing.Point(716, 618);
-            this.txtFormPassword.Name = "txtFormPassword";
-            this.txtFormPassword.PasswordChar = '*';
-            this.txtFormPassword.Size = new System.Drawing.Size(168, 31);
-            this.txtFormPassword.TabIndex = 24;
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.txtNationalId);
@@ -343,7 +275,7 @@
             this.groupBox6.Controls.Add(this.label15);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.txtPassportNo);
-            this.groupBox6.Location = new System.Drawing.Point(9, 303);
+            this.groupBox6.Location = new System.Drawing.Point(6, 261);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(446, 99);
             this.groupBox6.TabIndex = 12;
@@ -427,7 +359,7 @@
             // 
             this.dateOfBirth.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateOfBirth.Location = new System.Drawing.Point(198, 464);
+            this.dateOfBirth.Location = new System.Drawing.Point(198, 432);
             this.dateOfBirth.Name = "dateOfBirth";
             this.dateOfBirth.Size = new System.Drawing.Size(246, 26);
             this.dateOfBirth.TabIndex = 15;
@@ -436,7 +368,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(54, 466);
+            this.label42.Location = new System.Drawing.Point(54, 434);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(127, 22);
             this.label42.TabIndex = 63;
@@ -448,17 +380,16 @@
             this.cmbMaritalStatus.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMaritalStatus.FormattingEnabled = true;
-            this.cmbMaritalStatus.Location = new System.Drawing.Point(198, 435);
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(198, 403);
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
             this.cmbMaritalStatus.Size = new System.Drawing.Size(246, 25);
             this.cmbMaritalStatus.TabIndex = 14;
-            this.cmbMaritalStatus.SelectedIndexChanged += new System.EventHandler(this.cmbMaritalStatus_SelectedIndexChanged);
             // 
             // label41
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(50, 437);
+            this.label41.Location = new System.Drawing.Point(50, 405);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(133, 22);
             this.label41.TabIndex = 61;
@@ -470,17 +401,16 @@
             this.cmbGender.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Location = new System.Drawing.Point(198, 406);
+            this.cmbGender.Location = new System.Drawing.Point(198, 374);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(246, 25);
             this.cmbGender.TabIndex = 13;
-            this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.cmbGender_SelectedIndexChanged);
             // 
             // label40
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(107, 410);
+            this.label40.Location = new System.Drawing.Point(107, 378);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(71, 22);
             this.label40.TabIndex = 13;
@@ -503,19 +433,6 @@
             this.txtNickName.Name = "txtNickName";
             this.txtNickName.Size = new System.Drawing.Size(244, 23);
             this.txtNickName.TabIndex = 3;
-            // 
-            // cmbPrimaryDomain
-            // 
-            this.cmbPrimaryDomain.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbPrimaryDomain.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbPrimaryDomain.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPrimaryDomain.FormattingEnabled = true;
-            this.cmbPrimaryDomain.Location = new System.Drawing.Point(328, 182);
-            this.cmbPrimaryDomain.Name = "cmbPrimaryDomain";
-            this.cmbPrimaryDomain.Size = new System.Drawing.Size(116, 25);
-            this.cmbPrimaryDomain.TabIndex = 7;
-            this.cmbPrimaryDomain.SelectedIndexChanged += new System.EventHandler(this.cmbPrimaryDomain_SelectedIndexChanged);
-            this.cmbPrimaryDomain.Leave += new System.EventHandler(this.cmbPrimaryDomain_Leave);
             // 
             // listView1
             // 
@@ -545,20 +462,6 @@
             // 
             this.columnHeader2.Text = "ContactNo";
             this.columnHeader2.Width = 293;
-            // 
-            // addButton
-            // 
-            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.addButton.BackgroundImage = global::AppUserManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
-            this.addButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.addButton.Location = new System.Drawing.Point(893, 514);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(121, 45);
-            this.addButton.TabIndex = 23;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = false;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // cmbCountryCode
             // 
@@ -594,11 +497,10 @@
             this.cmbDesignation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDesignation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDesignation.FormattingEnabled = true;
-            this.cmbDesignation.Location = new System.Drawing.Point(200, 275);
+            this.cmbDesignation.Location = new System.Drawing.Point(200, 218);
             this.cmbDesignation.Name = "cmbDesignation";
             this.cmbDesignation.Size = new System.Drawing.Size(244, 25);
             this.cmbDesignation.TabIndex = 11;
-            this.cmbDesignation.SelectedIndexChanged += new System.EventHandler(this.cmbDesignation_SelectedIndexChanged);
             // 
             // cmbCountry
             // 
@@ -606,11 +508,10 @@
             this.cmbCountry.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCountry.FormattingEnabled = true;
-            this.cmbCountry.Location = new System.Drawing.Point(199, 243);
+            this.cmbCountry.Location = new System.Drawing.Point(199, 186);
             this.cmbCountry.Name = "cmbCountry";
             this.cmbCountry.Size = new System.Drawing.Size(244, 25);
             this.cmbCountry.TabIndex = 10;
-            this.cmbCountry.SelectedIndexChanged += new System.EventHandler(this.cmbCountry_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -722,7 +623,6 @@
             this.PerAPostOfficeCombo.Name = "PerAPostOfficeCombo";
             this.PerAPostOfficeCombo.Size = new System.Drawing.Size(135, 27);
             this.PerAPostOfficeCombo.TabIndex = 9;
-            this.PerAPostOfficeCombo.SelectedIndexChanged += new System.EventHandler(this.PerAPostOfficeCombo_SelectedIndexChanged);
             // 
             // PerAThanaCombo
             // 
@@ -733,7 +633,6 @@
             this.PerAThanaCombo.Name = "PerAThanaCombo";
             this.PerAThanaCombo.Size = new System.Drawing.Size(137, 27);
             this.PerAThanaCombo.TabIndex = 8;
-            this.PerAThanaCombo.SelectedIndexChanged += new System.EventHandler(this.PerAThanaCombo_SelectedIndexChanged);
             // 
             // PerADivisionCombo
             // 
@@ -744,7 +643,6 @@
             this.PerADivisionCombo.Name = "PerADivisionCombo";
             this.PerADivisionCombo.Size = new System.Drawing.Size(137, 27);
             this.PerADivisionCombo.TabIndex = 6;
-            this.PerADivisionCombo.SelectedIndexChanged += new System.EventHandler(this.PerADivisionCombo_SelectedIndexChanged);
             // 
             // PerADistrictCombo
             // 
@@ -755,7 +653,6 @@
             this.PerADistrictCombo.Name = "PerADistrictCombo";
             this.PerADistrictCombo.Size = new System.Drawing.Size(137, 27);
             this.PerADistrictCombo.TabIndex = 7;
-            this.PerADistrictCombo.SelectedIndexChanged += new System.EventHandler(this.PerADistrictCombo_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -916,7 +813,6 @@
             this.SameAsPACheckBox.TabIndex = 0;
             this.SameAsPACheckBox.Text = "Same As Present Address";
             this.SameAsPACheckBox.UseVisualStyleBackColor = true;
-            this.SameAsPACheckBox.CheckedChanged += new System.EventHandler(this.SameAsPACheckBox_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -1018,7 +914,6 @@
             this.PAPostOfficeCombo.Name = "PAPostOfficeCombo";
             this.PAPostOfficeCombo.Size = new System.Drawing.Size(129, 27);
             this.PAPostOfficeCombo.TabIndex = 9;
-            this.PAPostOfficeCombo.SelectedIndexChanged += new System.EventHandler(this.PAPostOfficeCombo_SelectedIndexChanged);
             // 
             // PAThanaCombo
             // 
@@ -1029,7 +924,6 @@
             this.PAThanaCombo.Name = "PAThanaCombo";
             this.PAThanaCombo.Size = new System.Drawing.Size(129, 27);
             this.PAThanaCombo.TabIndex = 8;
-            this.PAThanaCombo.SelectedIndexChanged += new System.EventHandler(this.PAThanaCombo_SelectedIndexChanged);
             // 
             // PADistrictCombo
             // 
@@ -1040,7 +934,6 @@
             this.PADistrictCombo.Name = "PADistrictCombo";
             this.PADistrictCombo.Size = new System.Drawing.Size(130, 27);
             this.PADistrictCombo.TabIndex = 7;
-            this.PADistrictCombo.SelectedIndexChanged += new System.EventHandler(this.PADistrictCombo_SelectedIndexChanged);
             // 
             // label21
             // 
@@ -1061,7 +954,6 @@
             this.PADivisionCombo.Name = "PADivisionCombo";
             this.PADivisionCombo.Size = new System.Drawing.Size(130, 27);
             this.PADivisionCombo.TabIndex = 6;
-            this.PADivisionCombo.SelectedIndexChanged += new System.EventHandler(this.PADivisionCombo_SelectedIndexChanged);
             // 
             // label25
             // 
@@ -1205,7 +1097,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(198, 522);
+            this.txtPassword.Location = new System.Drawing.Point(198, 490);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(246, 26);
@@ -1219,13 +1111,12 @@
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(190, 22);
             this.txtContactNo.TabIndex = 22;
-            this.txtContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContactNo_KeyPress);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(-4, 243);
+            this.label13.Location = new System.Drawing.Point(-4, 186);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(193, 22);
             this.label13.TabIndex = 36;
@@ -1262,7 +1153,7 @@
             // txtLogInID
             // 
             this.txtLogInID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogInID.Location = new System.Drawing.Point(198, 495);
+            this.txtLogInID.Location = new System.Drawing.Point(198, 463);
             this.txtLogInID.Name = "txtLogInID";
             this.txtLogInID.ReadOnly = true;
             this.txtLogInID.Size = new System.Drawing.Size(246, 23);
@@ -1286,21 +1177,11 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Contact No";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(43, 183);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 22);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Primary Email   ";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(72, 276);
+            this.label5.Location = new System.Drawing.Point(72, 219);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 22);
             this.label5.TabIndex = 23;
@@ -1320,7 +1201,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(90, 523);
+            this.label2.Location = new System.Drawing.Point(90, 491);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 22);
             this.label2.TabIndex = 20;
@@ -1330,7 +1211,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(91, 495);
+            this.label38.Location = new System.Drawing.Point(91, 463);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(90, 22);
             this.label38.TabIndex = 19;
@@ -1345,6 +1226,19 @@
             this.label1.Size = new System.Drawing.Size(160, 22);
             this.label1.TabIndex = 19;
             this.label1.Text = "Existing Empl  ID ";
+            // 
+            // addButton
+            // 
+            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.addButton.BackgroundImage = global::AppUserManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
+            this.addButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.addButton.Location = new System.Drawing.Point(893, 514);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(121, 45);
+            this.addButton.TabIndex = 23;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = false;
             // 
             // createUserButton
             // 
@@ -1367,40 +1261,56 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(421, -5);
+            this.label9.Location = new System.Drawing.Point(389, -5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(306, 28);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "PC User Information Details";
-            // 
-            // catidtxtbox
-            // 
-            this.catidtxtbox.Location = new System.Drawing.Point(181, -2);
-            this.catidtxtbox.Name = "catidtxtbox";
-            this.catidtxtbox.Size = new System.Drawing.Size(100, 20);
-            this.catidtxtbox.TabIndex = 4;
+            this.label9.Size = new System.Drawing.Size(354, 28);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Non PC User Information Details";
             // 
             // catnametxtbox
             // 
-            this.catnametxtbox.Location = new System.Drawing.Point(301, -2);
+            this.catnametxtbox.Location = new System.Drawing.Point(201, -2);
             this.catnametxtbox.Name = "catnametxtbox";
             this.catnametxtbox.Size = new System.Drawing.Size(100, 20);
-            this.catnametxtbox.TabIndex = 5;
+            this.catnametxtbox.TabIndex = 7;
             // 
-            // UsercreationUi
+            // catidtxtbox
+            // 
+            this.catidtxtbox.Location = new System.Drawing.Point(97, -2);
+            this.catidtxtbox.Name = "catidtxtbox";
+            this.catidtxtbox.Size = new System.Drawing.Size(100, 20);
+            this.catidtxtbox.TabIndex = 6;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(492, 626);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(216, 20);
+            this.label43.TabIndex = 69;
+            this.label43.Text = "Sender  Emai Password ";
+            // 
+            // txtFormPassword
+            // 
+            this.txtFormPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFormPassword.Location = new System.Drawing.Point(716, 618);
+            this.txtFormPassword.Name = "txtFormPassword";
+            this.txtFormPassword.PasswordChar = '*';
+            this.txtFormPassword.Size = new System.Drawing.Size(168, 31);
+            this.txtFormPassword.TabIndex = 24;
+            // 
+            // NonPcUsercreationUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1164, 703);
             this.Controls.Add(this.catnametxtbox);
             this.Controls.Add(this.catidtxtbox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
-            this.Name = "UsercreationUi";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UsercreationUi";
-            this.Load += new System.EventHandler(this.UsercreationUi_Load);
+            this.Name = "NonPcUsercreationUI";
+            this.Text = "NonPcUsercreationUI";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1428,12 +1338,6 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox txtPrimaryUserPart;
-        private System.Windows.Forms.TextBox txtSecondaryEmailUser;
-        private System.Windows.Forms.ComboBox cmbSecondaryDomain;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox txtFormPassword;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txtNationalId;
         private System.Windows.Forms.TextBox txtBirthCertificatNo;
@@ -1451,7 +1355,6 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox txtNickName;
-        private System.Windows.Forms.ComboBox cmbPrimaryDomain;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader;
@@ -1527,7 +1430,6 @@
         private System.Windows.Forms.TextBox txtLogInID;
         private System.Windows.Forms.TextBox txtEmployeeId;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
@@ -1535,7 +1437,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button createUserButton;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox catidtxtbox;
         private System.Windows.Forms.TextBox catnametxtbox;
+        private System.Windows.Forms.TextBox catidtxtbox;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtFormPassword;
     }
 }

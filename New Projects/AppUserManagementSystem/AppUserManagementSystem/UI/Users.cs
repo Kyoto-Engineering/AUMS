@@ -34,6 +34,7 @@ namespace AppUserManagementSystem.Ui
         public int maritalStatusId;
         public DateTime registrationDate;
         public DateTime exitDate;
+        public int caaaiid;
         public string CountryName { set; get; }
         public string EmailAdd { set; get; }
         public string DesignationName { set; get; }
@@ -44,6 +45,9 @@ namespace AppUserManagementSystem.Ui
             get { return employeeId; }
             set { employeeId = value; }
         }
+
+      
+
         public int UserId
         {
             set { userId = value; }
@@ -55,6 +59,13 @@ namespace AppUserManagementSystem.Ui
             set { userName = value; }
             get { return userName; }
         }
+
+        public int Caaatid
+        {
+            set { caaaiid = value; }
+            get { return caaaiid; }
+        }
+
         public string FullName
         {
             set { fullName = value; }
