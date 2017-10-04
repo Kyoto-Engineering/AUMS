@@ -36,6 +36,8 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtFormPassword = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtNationalId = new System.Windows.Forms.TextBox();
             this.txtBirthCertificatNo = new System.Windows.Forms.TextBox();
@@ -57,6 +59,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.addButton = new System.Windows.Forms.Button();
             this.cmbCountryCode = new System.Windows.Forms.ComboBox();
             this.txtFatherName = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
@@ -132,13 +135,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.addButton = new System.Windows.Forms.Button();
             this.createUserButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.catnametxtbox = new System.Windows.Forms.TextBox();
             this.catidtxtbox = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.txtFormPassword = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -267,6 +267,24 @@
             this.label35.TabIndex = 2;
             this.label35.Text = "Street Name  :";
             // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(492, 626);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(216, 20);
+            this.label43.TabIndex = 69;
+            this.label43.Text = "Sender  Emai Password ";
+            // 
+            // txtFormPassword
+            // 
+            this.txtFormPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFormPassword.Location = new System.Drawing.Point(716, 618);
+            this.txtFormPassword.Name = "txtFormPassword";
+            this.txtFormPassword.PasswordChar = '*';
+            this.txtFormPassword.Size = new System.Drawing.Size(168, 31);
+            this.txtFormPassword.TabIndex = 24;
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.txtNationalId);
@@ -384,6 +402,7 @@
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
             this.cmbMaritalStatus.Size = new System.Drawing.Size(246, 25);
             this.cmbMaritalStatus.TabIndex = 14;
+            this.cmbMaritalStatus.SelectedIndexChanged += new System.EventHandler(this.cmbMaritalStatus_SelectedIndexChanged);
             // 
             // label41
             // 
@@ -405,6 +424,7 @@
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(246, 25);
             this.cmbGender.TabIndex = 13;
+            this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.cmbGender_SelectedIndexChanged);
             // 
             // label40
             // 
@@ -463,6 +483,19 @@
             this.columnHeader2.Text = "ContactNo";
             this.columnHeader2.Width = 293;
             // 
+            // addButton
+            // 
+            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.addButton.BackgroundImage = global::AppUserManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
+            this.addButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.addButton.Location = new System.Drawing.Point(893, 514);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(121, 45);
+            this.addButton.TabIndex = 23;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = false;
+            // 
             // cmbCountryCode
             // 
             this.cmbCountryCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -501,6 +534,7 @@
             this.cmbDesignation.Name = "cmbDesignation";
             this.cmbDesignation.Size = new System.Drawing.Size(244, 25);
             this.cmbDesignation.TabIndex = 11;
+            this.cmbDesignation.SelectedIndexChanged += new System.EventHandler(this.cmbDesignation_SelectedIndexChanged);
             // 
             // cmbCountry
             // 
@@ -643,6 +677,7 @@
             this.PerADivisionCombo.Name = "PerADivisionCombo";
             this.PerADivisionCombo.Size = new System.Drawing.Size(137, 27);
             this.PerADivisionCombo.TabIndex = 6;
+            this.PerADivisionCombo.SelectedIndexChanged += new System.EventHandler(this.PerADivisionCombo_SelectedIndexChanged);
             // 
             // PerADistrictCombo
             // 
@@ -813,6 +848,7 @@
             this.SameAsPACheckBox.TabIndex = 0;
             this.SameAsPACheckBox.Text = "Same As Present Address";
             this.SameAsPACheckBox.UseVisualStyleBackColor = true;
+            this.SameAsPACheckBox.CheckedChanged += new System.EventHandler(this.SameAsPACheckBox_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -914,6 +950,7 @@
             this.PAPostOfficeCombo.Name = "PAPostOfficeCombo";
             this.PAPostOfficeCombo.Size = new System.Drawing.Size(129, 27);
             this.PAPostOfficeCombo.TabIndex = 9;
+            this.PAPostOfficeCombo.SelectedIndexChanged += new System.EventHandler(this.PAPostOfficeCombo_SelectedIndexChanged);
             // 
             // PAThanaCombo
             // 
@@ -924,6 +961,7 @@
             this.PAThanaCombo.Name = "PAThanaCombo";
             this.PAThanaCombo.Size = new System.Drawing.Size(129, 27);
             this.PAThanaCombo.TabIndex = 8;
+            this.PAThanaCombo.SelectedIndexChanged += new System.EventHandler(this.PAThanaCombo_SelectedIndexChanged);
             // 
             // PADistrictCombo
             // 
@@ -934,6 +972,7 @@
             this.PADistrictCombo.Name = "PADistrictCombo";
             this.PADistrictCombo.Size = new System.Drawing.Size(130, 27);
             this.PADistrictCombo.TabIndex = 7;
+            this.PADistrictCombo.SelectedIndexChanged += new System.EventHandler(this.PADistrictCombo_SelectedIndexChanged);
             // 
             // label21
             // 
@@ -954,6 +993,7 @@
             this.PADivisionCombo.Name = "PADivisionCombo";
             this.PADivisionCombo.Size = new System.Drawing.Size(130, 27);
             this.PADivisionCombo.TabIndex = 6;
+            this.PADivisionCombo.SelectedIndexChanged += new System.EventHandler(this.PADivisionCombo_SelectedIndexChanged);
             // 
             // label25
             // 
@@ -1227,19 +1267,6 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Existing Empl  ID ";
             // 
-            // addButton
-            // 
-            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.addButton.BackgroundImage = global::AppUserManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
-            this.addButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.addButton.Location = new System.Drawing.Point(893, 514);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(121, 45);
-            this.addButton.TabIndex = 23;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = false;
-            // 
             // createUserButton
             // 
             this.createUserButton.BackColor = System.Drawing.Color.LightYellow;
@@ -1280,24 +1307,6 @@
             this.catidtxtbox.Name = "catidtxtbox";
             this.catidtxtbox.Size = new System.Drawing.Size(100, 20);
             this.catidtxtbox.TabIndex = 6;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(492, 626);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(216, 20);
-            this.label43.TabIndex = 69;
-            this.label43.Text = "Sender  Emai Password ";
-            // 
-            // txtFormPassword
-            // 
-            this.txtFormPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFormPassword.Location = new System.Drawing.Point(716, 618);
-            this.txtFormPassword.Name = "txtFormPassword";
-            this.txtFormPassword.PasswordChar = '*';
-            this.txtFormPassword.Size = new System.Drawing.Size(168, 31);
-            this.txtFormPassword.TabIndex = 24;
             // 
             // NonPcUsercreationUI
             // 
