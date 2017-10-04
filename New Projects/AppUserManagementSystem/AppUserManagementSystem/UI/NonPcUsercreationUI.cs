@@ -13,10 +13,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppUserManagementSystem.DbGateway;
 using AppUserManagementSystem.Log_in_Ui;
+using AppUserManagementSystem.Ui;
 
-namespace AppUserManagementSystem.Ui
+namespace AppUserManagementSystem.UI
 {
-    public partial class UsercreationUi : Form
+    public partial class NonPcUsercreationUI : Form
     {
         private SqlConnection con;
         private SqlCommand cmd;
@@ -32,7 +33,10 @@ namespace AppUserManagementSystem.Ui
         public int dbUserId;
         public int catid;
         public string catname;
-        public UsercreationUi()
+
+
+
+        public NonPcUsercreationUI()
         {
             InitializeComponent();
         }
@@ -64,13 +68,11 @@ namespace AppUserManagementSystem.Ui
                     con.Close();
                 }
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void SaveOverSeasAddress()
         {
@@ -150,24 +152,24 @@ namespace AppUserManagementSystem.Ui
         }
 
 
-        private void SaveUserEmail(int emailHostIdK, string emailUser, Boolean statuss)
-        {
-            try
-            {
-                int ug = 0;
-                UserManager aManager = new UserManager();
-                UserEmail aEmail = new UserEmail();
-                aEmail.UserPart = emailUser;
-                aEmail.HostEmailId = emailHostIdK;
-                aEmail.UserId = instantUserId;
-                aEmail.IsPrimaryStatus = statuss;
-                ug = aManager.SaveUserEmail(aEmail);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //private void SaveUserEmail(int emailHostIdK, string emailUser, Boolean statuss)
+        //{
+        //    try
+        //    {
+        //        int ug = 0;
+        //        UserManager aManager = new UserManager();
+        //        UserEmail aEmail = new UserEmail();
+        //        aEmail.UserPart = emailUser;
+        //        aEmail.HostEmailId = emailHostIdK;
+        //        aEmail.UserId = instantUserId;
+        //        aEmail.IsPrimaryStatus = statuss;
+        //        ug = aManager.SaveUserEmail(aEmail);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         private void SaveUserInformation()
         {
@@ -199,11 +201,11 @@ namespace AppUserManagementSystem.Ui
                 };
                 ig = auManager.SaveUserDetail(aUser);
                 GetMaxUserId();
-                SaveUserEmail(emailHostId, txtPrimaryUserPart.Text, true);
-                if (!string.IsNullOrWhiteSpace(txtSecondaryEmailUser.Text) || !string.IsNullOrWhiteSpace(cmbSecondaryDomain.Text))
-                {
-                    SaveUserEmail(emailHostId1, txtSecondaryEmailUser.Text, false);
-                }
+                //SaveUserEmail(emailHostId, txtPrimaryUserPart.Text, true);
+                //if (!string.IsNullOrWhiteSpace(txtSecondaryEmailUser.Text) || !string.IsNullOrWhiteSpace(cmbSecondaryDomain.Text))
+                //{
+                //    SaveUserEmail(emailHostId1, txtSecondaryEmailUser.Text, false);
+                //}
                 NewMailMessage();
             }
             catch (Exception ex)
@@ -282,6 +284,7 @@ namespace AppUserManagementSystem.Ui
             PADistrictCombo.SelectedIndex = -1;
             PADivisionCombo.SelectedIndex = -1;
         }
+
         private void ResetPermanantAddress2()
         {
             txtPerFlatNo.Clear();
@@ -312,10 +315,10 @@ namespace AppUserManagementSystem.Ui
             txtNickName.Clear();
             txtFatherName.Clear();
             txtMotherName.Clear();
-            txtPrimaryUserPart.Clear();
-            txtSecondaryEmailUser.Clear();
-            cmbPrimaryDomain.SelectedIndex = -1;
-            cmbSecondaryDomain.SelectedIndex = -1;
+           // txtPrimaryUserPart.Clear();
+           // txtSecondaryEmailUser.Clear();
+            //cmbPrimaryDomain.SelectedIndex = -1;
+            //cmbSecondaryDomain.SelectedIndex = -1;
             if (cmbCountry.Text != "Bangladesh")
             {
                 txtStreetName.Clear();
@@ -334,7 +337,7 @@ namespace AppUserManagementSystem.Ui
             txtBirthCertificatNo.Clear();
             txtPassportNo.Clear();
             txtNationalId.Clear();
-            txtPrimaryUserPart.Clear();
+           // txtPrimaryUserPart.Clear();
             txtLogInID.Clear();
             txtPassword.Clear();
             txtFormPassword.Clear();
@@ -357,34 +360,6 @@ namespace AppUserManagementSystem.Ui
                                 districtIdPA =
                                     districtIdPer = thanaIdPA = thanaIdPer = countryId = emailAddresTo = "";
 
-        }
-
-        private void GetMaxEmailBankId()
-        {
-            try
-            {
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string ctk = "SELECT  MAX(EmailBankId) from EmailBank ";
-                cmd = new SqlCommand(ctk, con);
-                rdr = cmd.ExecuteReader();
-                if (rdr.Read())
-                {
-                    emailHostId = (rdr.GetInt32(0));
-                }
-                if ((rdr != null))
-                {
-                    rdr.Close();
-                }
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void createUserButton_Click(object sender, EventArgs e)
@@ -419,22 +394,22 @@ namespace AppUserManagementSystem.Ui
                 MessageBox.Show("Please enter mother Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtPrimaryUserPart.Text))
-            {
-                MessageBox.Show("Please enter user part of primary email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(cmbPrimaryDomain.Text))
-            {
-                MessageBox.Show("Please select domain of primary email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //if (string.IsNullOrWhiteSpace(txtPrimaryUserPart.Text))
+            //{
+            //    MessageBox.Show("Please enter user part of primary email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //if (string.IsNullOrWhiteSpace(cmbPrimaryDomain.Text))
+            //{
+            //    MessageBox.Show("Please select domain of primary email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
-            if (!string.IsNullOrWhiteSpace(txtSecondaryEmailUser.Text) && string.IsNullOrWhiteSpace(cmbSecondaryDomain.Text))
-            {
-                MessageBox.Show("You  must select domain of secondary email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //if (!string.IsNullOrWhiteSpace(txtSecondaryEmailUser.Text) && string.IsNullOrWhiteSpace(cmbSecondaryDomain.Text))
+            //{
+            //    MessageBox.Show("You  must select domain of secondary email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
             if (string.IsNullOrWhiteSpace(cmbCountry.Text))
             {
                 MessageBox.Show("Please select Country Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -566,22 +541,22 @@ namespace AppUserManagementSystem.Ui
                         dbUserId = (rdr1.GetInt32(0));
                     }
                     con.Close();
-                    con = new SqlConnection(cs.DBConn);
-                    con.Open();
-                    string ct5 = "SELECT  (UserEmail.UserPart+'@'+EmailHostBank.EmailHostName) as EmailAddress FROM  Users INNER JOIN  UserEmail ON Users.UserId = UserEmail.UserId INNER JOIN  EmailHostBank ON UserEmail.EmailHostId = EmailHostBank.EmailHostId where  Users.FullName='" + dbUserFullName + "' and UserEmail.IsPrimaryKey='true'";
-                    cmd = new SqlCommand(ct5, con);
-                    rdr2 = cmd.ExecuteReader();
-                    if (rdr2.Read())
-                    {
-                        dbEmailAddress = (rdr2.GetString(0));
-                        currentEmailAddress = txtPrimaryUserPart.Text + '@' + cmbPrimaryDomain.Text;
-                    }
-                    con.Close();
-                    if (currentEmailAddress == dbEmailAddress)
-                    {
-                        MessageBox.Show("This User Already Exists,Please Input another one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    //con = new SqlConnection(cs.DBConn);
+                    //con.Open();
+                    //string ct5 = "SELECT  (UserEmail.UserPart+'@'+EmailHostBank.EmailHostName) as EmailAddress FROM  Users INNER JOIN  UserEmail ON Users.UserId = UserEmail.UserId INNER JOIN  EmailHostBank ON UserEmail.EmailHostId = EmailHostBank.EmailHostId where  Users.FullName='" + dbUserFullName + "' and UserEmail.IsPrimaryKey='true'";
+                    //cmd = new SqlCommand(ct5, con);
+                    //rdr2 = cmd.ExecuteReader();
+                    //if (rdr2.Read())
+                    //{
+                    //    dbEmailAddress = (rdr2.GetString(0));
+                    //    currentEmailAddress = txtPrimaryUserPart.Text + '@' + cmbPrimaryDomain.Text;
+                    //}
+                    //con.Close();
+                    //if (currentEmailAddress == dbEmailAddress)
+                    //{
+                    //    MessageBox.Show("This User Already Exists,Please Input another one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    return;
+                    //}
                 }
                 else
                 {
@@ -642,6 +617,7 @@ namespace AppUserManagementSystem.Ui
             }
          
         }
+
 
         private void MaritalStatusLoad()
         {
@@ -721,13 +697,15 @@ namespace AppUserManagementSystem.Ui
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void NewMailMessage()
         {
             try
             {
                 GetSenderEMailAddress();
                 emailAddressFrom = userName + "@" + senderEmailDomain;
-                emailAddresTo = txtPrimaryUserPart.Text + "@" + cmbPrimaryDomain.Text;
+                //emailAddresTo = "hr@keal.com.bd";
+                emailAddresTo = "iqbal.h@keal.com.bd";
                 smtpHost = "smtp." + hostName + ".com";
                 string body = "Your LogIn Id is:'" + txtLogInID.Text + "' and  Password is:'" + txtPassword.Text + "'.Thank you.";
                 MailMessage msg = new MailMessage();
@@ -865,8 +843,8 @@ namespace AppUserManagementSystem.Ui
             nUserId = Loginuiaums.uId.ToString();
             LoadCountryCode();
             CountryLoad();
-            HostEmailAddress2();
-            HostEmailAddress();
+           // HostEmailAddress2();
+           // HostEmailAddress();
 
             DesignationLoad();
             MaritalStatusLoad();
@@ -879,7 +857,7 @@ namespace AppUserManagementSystem.Ui
             con = new SqlConnection(cs.DBConn);
             con.Open();
             string getc = "select UsercatId, Usercatname from UserCategory where UsercatId = 1 ";
-            cmd = new SqlCommand(getc,con);
+            cmd = new SqlCommand(getc, con);
             rdr = cmd.ExecuteReader();
             if (rdr.Read() == true)
             {
@@ -893,128 +871,49 @@ namespace AppUserManagementSystem.Ui
 
         }
 
-        private void HostEmailAddress2()
-        {
-            try
-            {
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string ctt = "select EmailHostName from EmailHostBank";
-                cmd = new SqlCommand(ctt);
-                cmd.Connection = con;
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    cmbSecondaryDomain.Items.Add(rdr.GetValue(0).ToString());
-                }
-                // cmbSecondaryDomain.Items.Add("Not In the list");
-                cmbSecondaryDomain.Items.Add("Not In The List");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void HostEmailAddress()
-        {
-            try
-            {
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string ctt = "select EmailHostName from EmailHostBank";
-                cmd = new SqlCommand(ctt);
-                cmd.Connection = con;
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    cmbPrimaryDomain.Items.Add(rdr.GetValue(0).ToString());
-                }
-                cmbPrimaryDomain.Items.Add("Not In The List");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void cmbPrimaryDomain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbPrimaryDomain.Text == "Not In The List")
-            {
-                string input = Microsoft.VisualBasic.Interaction.InputBox("Please Input Email Host Name Here", "Input Here", "", -1, -1);
-                string input1 = Microsoft.VisualBasic.Interaction.InputBox("Please Input SMTP Host Name Here", "Input Here", "", -1, -1);
-                if (string.IsNullOrWhiteSpace(input))
-                {
-                    cmbPrimaryDomain.SelectedIndex = -1;
-                }
-                else
-                {
-                    con = new SqlConnection(cs.DBConn);
-                    con.Open();
-                    string ct2 = "select EmailHostName from EmailHostBank where EmailHostName='" + input + "'";
-                    cmd = new SqlCommand(ct2, con);
-                    rdr = cmd.ExecuteReader();
-                    if (rdr.Read() && !rdr.IsDBNull(0))
-                    {
-                        MessageBox.Show("This EmailHost  Already Exists,Please Select From List", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        con.Close();
-                        cmbPrimaryDomain.SelectedIndex = -1;
-                    }
-                    else
-                    {
-                        try
-                        {
-                            con = new SqlConnection(cs.DBConn);
-                            con.Open();
-                            string query1 = "insert into EmailHostBank (EmailHostName,SmtpHostName) values (@d1,@d2)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
-                            cmd = new SqlCommand(query1, con);
-                            cmd.Parameters.AddWithValue("@d1", input);
-                            cmd.Parameters.AddWithValue("@d2", input1);
-                            cmd.ExecuteNonQuery();
-                            con.Close();
-                            cmbPrimaryDomain.Items.Clear();
-                            HostEmailAddress();
-                            cmbSecondaryDomain.Items.Clear();
-                            HostEmailAddress2();
-                            cmbPrimaryDomain.SelectedText = input;
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-
-                }
-            }
-            else
-            {
-                try
-                {
-                    con = new SqlConnection(cs.DBConn);
-                    con.Open();
-                    cmd = con.CreateCommand();
-                    cmd.CommandText = "SELECT EmailHostId from EmailHostBank WHERE EmailHostName= '" + cmbPrimaryDomain.Text + "'";
-                    rdr = cmd.ExecuteReader();
-                    if (rdr.Read())
-                    {
-                        emailHostId = rdr.GetInt32(0);
-                    }
-                    if ((rdr != null))
-                    {
-                        rdr.Close();
-                    }
-                    if (con.State == ConnectionState.Open)
-                    {
-                        con.Close();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
+        //private void HostEmailAddress2()
+        //{
+        //    try
+        //    {
+        //        con = new SqlConnection(cs.DBConn);
+        //        con.Open();
+        //        string ctt = "select EmailHostName from EmailHostBank";
+        //        cmd = new SqlCommand(ctt);
+        //        cmd.Connection = con;
+        //        rdr = cmd.ExecuteReader();
+        //        while (rdr.Read())
+        //        {
+        //            cmbSecondaryDomain.Items.Add(rdr.GetValue(0).ToString());
+        //        }
+        //        // cmbSecondaryDomain.Items.Add("Not In the list");
+        //        cmbSecondaryDomain.Items.Add("Not In The List");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+        //private void HostEmailAddress()
+        //{
+        //    try
+        //    {
+        //        con = new SqlConnection(cs.DBConn);
+        //        con.Open();
+        //        string ctt = "select EmailHostName from EmailHostBank";
+        //        cmd = new SqlCommand(ctt);
+        //        cmd.Connection = con;
+        //        rdr = cmd.ExecuteReader();
+        //        while (rdr.Read())
+        //        {
+        //            cmbPrimaryDomain.Items.Add(rdr.GetValue(0).ToString());
+        //        }
+        //        cmbPrimaryDomain.Items.Add("Not In The List");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         private void GetGender()
         {
@@ -1417,6 +1316,7 @@ namespace AppUserManagementSystem.Ui
             }
         }
 
+
         public void ResetPermanantAddress()
         {
             txtPerFlatNo.Clear();
@@ -1509,340 +1409,10 @@ namespace AppUserManagementSystem.Ui
             }
         }
 
-        private void PerAThanaCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string ctk = "SELECT  RTRIM(Thanas.T_ID)  from Thanas WHERE Thanas.Thana=@find and  Thanas.D_ID=@d2";
-                cmd = new SqlCommand(ctk);
-                cmd.Connection = con;
-                cmd.Parameters.Add(new SqlParameter("@find", System.Data.SqlDbType.NVarChar, 50, "Thana"));
-                cmd.Parameters.Add(new SqlParameter("@d2", System.Data.SqlDbType.NVarChar, 50, "D_ID"));
-                cmd.Parameters["@find"].Value = PerAThanaCombo.Text;
-                cmd.Parameters["@d2"].Value = districtIdPer;
-                rdr = cmd.ExecuteReader();
-                if (rdr.Read())
-                {
-                    thanaIdPer = (rdr.GetString(0));
-
-                }
-
-                if ((rdr != null))
-                {
-                    rdr.Close();
-                }
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-                }
-
-                PerAThanaCombo.Text = PerAThanaCombo.Text.Trim();
-                PerAPostOfficeCombo.Items.Clear();
-                PerAPostOfficeCombo.SelectedIndex = -1;
-                txtPerPostCode.Clear();
-                PerAPostOfficeCombo.Enabled = true;
-                PerAPostOfficeCombo.Focus();
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string ct = "select RTRIM(PostOffice.PostOfficeName) from PostOffice  Where PostOffice.T_ID = '" + thanaIdPer + "' order by PostOffice.T_ID desc";
-                cmd = new SqlCommand(ct);
-                cmd.Connection = con;
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    PerAPostOfficeCombo.Items.Add(rdr[0]);
-                }
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void PerADistrictCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string ctk = "SELECT  RTRIM(Districts.D_ID)  from Districts WHERE Districts.District=@find";
-                cmd = new SqlCommand(ctk);
-                cmd.Connection = con;
-                cmd.Parameters.Add(new SqlParameter("@find", System.Data.SqlDbType.NVarChar, 50, "District"));
-                cmd.Parameters["@find"].Value = PerADistrictCombo.Text;
-                rdr = cmd.ExecuteReader();
-                if (rdr.Read())
-                {
-                    districtIdPer = (rdr.GetString(0));
-                }
-                if ((rdr != null))
-                {
-                    rdr.Close();
-                }
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-                }
-                PerADistrictCombo.Text = PerADistrictCombo.Text.Trim();
-                PerAThanaCombo.SelectedIndex = -1;
-                PerAThanaCombo.Items.Clear();
-                PerAPostOfficeCombo.SelectedIndex = -1;
-                txtPerPostCode.Clear();
-                PerAThanaCombo.Enabled = true;
-                PerAThanaCombo.Focus();
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string ct = "select RTRIM(Thanas.Thana) from Thanas  Where Thanas.D_ID = '" + districtIdPer + "' order by Thanas.D_ID desc";
-                cmd = new SqlCommand(ct);
-                cmd.Connection = con;
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    PerAThanaCombo.Items.Add(rdr[0]);
-                }
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void PerAPostOfficeCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            try
-            {
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string ctk = "SELECT  RTRIM(PostOffice.PostOfficeId),RTRIM(PostOffice.PostCode) from PostOffice WHERE PostOffice.PostOfficeName=@find";
-                cmd = new SqlCommand(ctk);
-                cmd.Connection = con;
-                cmd.Parameters.Add(new SqlParameter("@find", System.Data.SqlDbType.NVarChar, 50, "PostOfficeName"));
-                cmd.Parameters["@find"].Value = PerAPostOfficeCombo.Text;
-                rdr = cmd.ExecuteReader();
-                if (rdr.Read())
-                {
-                    postofficeIdPer = (rdr.GetString(0));
-                    txtPerPostCode.Text = (rdr.GetString(1));
-                }
-                if ((rdr != null))
-                {
-                    rdr.Close();
-                }
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-                }
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void addButton_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(cmbCountryCode.Text))
-            {
-                MessageBox.Show("Please select CountryCode", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(txtContactNo.Text))
-            {
-                MessageBox.Show("Please type Contact No", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (listView1.Items.Count == 0)
-            {
-                ListViewItem list = new ListViewItem();
-                list.SubItems.Add(cmbCountryCode.Text);
-                list.SubItems.Add(txtContactNo.Text);
-
-                listView1.Items.Add(list);
-                txtContactNo.Clear();
-                cmbCountryCode.SelectedIndex = -1;
-                return;
-            }
-
-            ListViewItem list1 = new ListViewItem();
-            list1.SubItems.Add(cmbCountryCode.Text);
-            list1.SubItems.Add(txtContactNo.Text);
-
-            listView1.Items.Add(list1);
-            txtContactNo.Clear();
-            cmbCountryCode.SelectedIndex = -1;
-            return;  
-        }
-
-        private void cmbCountry_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbCountry.Text == "Bangladesh")
-            {
-                groupBox3.Visible = true;
-                groupBox4.Visible = false;
-
-            }
-            else
-            {
-                groupBox3.Visible = false;
-                groupBox4.Visible = true;
-
-            }
-            try
-            {
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string ctk = "SELECT  RTRIM(Countries.CountryId),RTRIM(Countries.CountryCode) from Countries WHERE Countries.CountryName=@find";
-                cmd = new SqlCommand(ctk);
-                cmd.Connection = con;
-                cmd.Parameters.Add(new SqlParameter("@find", System.Data.SqlDbType.NVarChar, 50, "CountryName"));
-                cmd.Parameters["@find"].Value = cmbCountry.Text;
-                rdr = cmd.ExecuteReader();
-                if (rdr.Read())
-                {
-                    countryId = (rdr.GetString(0));
-                    cmbCountryCode.Text = (rdr.GetString(1));
-                }
-                if ((rdr != null))
-                {
-                    rdr.Close();
-                }
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-                }
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void txtContactNo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
-                e.Handled = true;
-        }
-
-        private void cmbSecondaryDomain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbSecondaryDomain.Text == "Not In The List")
-            {
-                string input = Microsoft.VisualBasic.Interaction.InputBox("Please Input Email Host Name Here", "Input Here", "", -1, -1);
-                string input1 = Microsoft.VisualBasic.Interaction.InputBox("Please Input SMTP Host Name Here", "Input Here", "", -1, -1);
-                if (string.IsNullOrWhiteSpace(input))
-                {
-                    cmbSecondaryDomain.SelectedIndex = -1;
-                }
-                else
-                {
-                    con = new SqlConnection(cs.DBConn);
-                    con.Open();
-                    string ct2 = "select EmailHostName from EmailHostBank where EmailHostName='" + input + "'";
-                    cmd = new SqlCommand(ct2, con);
-                    rdr = cmd.ExecuteReader();
-                    if (rdr.Read() && !rdr.IsDBNull(0))
-                    {
-                        MessageBox.Show("This EmailHost  Already Exists,Please Select From List", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        con.Close();
-                        cmbSecondaryDomain.SelectedIndex = -1;
-                    }
-                    else
-                    {
-                        try
-                        {
-                            con = new SqlConnection(cs.DBConn);
-                            con.Open();
-                            string query1 = "insert into EmailHostBank (EmailHostName,SmtpHostName) values (@d1,@d2)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
-                            cmd = new SqlCommand(query1, con);
-                            cmd.Parameters.AddWithValue("@d1", input);
-                            cmd.Parameters.AddWithValue("@d2", input1);
-                            cmd.ExecuteNonQuery();
-                            con.Close();
-                            cmbSecondaryDomain.Items.Clear();
-                            HostEmailAddress2();
-                            cmbPrimaryDomain.Items.Clear();
-                            HostEmailAddress();
-
-                            cmbSecondaryDomain.SelectedText = input;
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-
-                }
-            }
-            else
-            {
-                try
-                {
-                    con = new SqlConnection(cs.DBConn);
-                    con.Open();
-                    cmd = con.CreateCommand();
-                    cmd.CommandText = "SELECT EmailHostId from EmailHostBank WHERE EmailHostName= '" + cmbSecondaryDomain.Text + "'";
-                    rdr = cmd.ExecuteReader();
-                    if (rdr.Read())
-                    {
-                        emailHostId1 = rdr.GetInt32(0);
-                    }
-                    if ((rdr != null))
-                    {
-                        rdr.Close();
-                    }
-                    if (con.State == ConnectionState.Open)
-                    {
-                        con.Close();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }           
-        }
-
-        private void cmbPrimaryDomain_Leave(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(cmbPrimaryDomain.Text) && !cmbPrimaryDomain.Items.Contains(cmbPrimaryDomain.Text))
-            {
-                MessageBox.Show("Please Select A Valid Voucher No", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cmbPrimaryDomain.ResetText();
-                // this.BeginInvoke(new ChangeFocusDelegate(changeFocus), cmbPrimaryDomain);
-            }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
 
 
 
 
-
-
-
-
-    }
-}
-
-namespace Microsoft.VisualBasic
-{
-    internal class Interaction
-    {
-        internal static string InputBox(string p1, string p2, string p3, int p4, int p5)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
