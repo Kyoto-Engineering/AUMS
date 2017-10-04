@@ -495,6 +495,7 @@
             this.addButton.TabIndex = 23;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // cmbCountryCode
             // 
@@ -546,6 +547,7 @@
             this.cmbCountry.Name = "cmbCountry";
             this.cmbCountry.Size = new System.Drawing.Size(244, 25);
             this.cmbCountry.TabIndex = 10;
+            this.cmbCountry.SelectedIndexChanged += new System.EventHandler(this.cmbCountry_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -657,6 +659,7 @@
             this.PerAPostOfficeCombo.Name = "PerAPostOfficeCombo";
             this.PerAPostOfficeCombo.Size = new System.Drawing.Size(135, 27);
             this.PerAPostOfficeCombo.TabIndex = 9;
+            this.PerAPostOfficeCombo.SelectedIndexChanged += new System.EventHandler(this.PerAPostOfficeCombo_SelectedIndexChanged);
             // 
             // PerAThanaCombo
             // 
@@ -667,6 +670,7 @@
             this.PerAThanaCombo.Name = "PerAThanaCombo";
             this.PerAThanaCombo.Size = new System.Drawing.Size(137, 27);
             this.PerAThanaCombo.TabIndex = 8;
+            this.PerAThanaCombo.SelectedIndexChanged += new System.EventHandler(this.PerAThanaCombo_SelectedIndexChanged);
             // 
             // PerADivisionCombo
             // 
@@ -688,6 +692,7 @@
             this.PerADistrictCombo.Name = "PerADistrictCombo";
             this.PerADistrictCombo.Size = new System.Drawing.Size(137, 27);
             this.PerADistrictCombo.TabIndex = 7;
+            this.PerADistrictCombo.SelectedIndexChanged += new System.EventHandler(this.PerADistrictCombo_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -1151,6 +1156,7 @@
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(190, 22);
             this.txtContactNo.TabIndex = 22;
+            this.txtContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContactNo_KeyPress);
             // 
             // label13
             // 
@@ -1320,6 +1326,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "NonPcUsercreationUI";
             this.Text = "NonPcUsercreationUI";
+            this.Load += new System.EventHandler(this.NonPcUsercreationUI_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);

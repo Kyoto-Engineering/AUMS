@@ -16,5 +16,13 @@ namespace AppUserManagementSystem.UI
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NonPcUsercreationUI bla = new NonPcUsercreationUI();
+            this.Visible = false;
+            bla.ShowDialog();
+            this.Visible = true;
+        }
     }
 }
