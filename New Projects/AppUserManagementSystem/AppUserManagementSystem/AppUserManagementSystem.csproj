@@ -50,8 +50,14 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,12 +83,19 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeProfile.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\userprofile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>userprofile.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\viwer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\viwer.Designer.cs">
+      <DependentUpon>viwer.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Countries.cs" />
     <Compile Include="UI\Designations.cs" />
@@ -114,6 +127,18 @@
     </Compile>
     <Compile Include="UI\NonPCusers.Designer.cs">
       <DependentUpon>NonPCusers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NonPcUsersGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NonPcUsersGrid.Designer.cs">
+      <DependentUpon>NonPcUsersGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NonPcUserUpdateUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NonPcUserUpdateUI.Designer.cs">
+      <DependentUpon>NonPcUserUpdateUI.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\OverSeasAddress.cs" />
     <Compile Include="UI\PerManantAddress.cs" />
@@ -151,6 +176,12 @@
       <DependentUpon>UserImageUpdateUI.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UserManager.cs" />
+    <Compile Include="UI\UserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserProfile.Designer.cs">
+      <DependentUpon>UserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Users.cs" />
     <Compile Include="UI\UserStatusUI.cs">
       <SubType>Form</SubType>
@@ -176,13 +207,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\EmployeeProfile.resx">
+      <DependentUpon>EmployeeProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\EmployeeProfile.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EmployeeProfile.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\userprofile.resx">
+      <DependentUpon>userprofile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\userprofile.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>userprofile.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\viwer.resx">
+      <DependentUpon>viwer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MainmainUI.resx">
       <DependentUpon>MainmainUI.cs</DependentUpon>
@@ -195,6 +235,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\NonPCusers.resx">
       <DependentUpon>NonPCusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NonPcUsersGrid.resx">
+      <DependentUpon>NonPcUsersGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NonPcUserUpdateUI.resx">
+      <DependentUpon>NonPcUserUpdateUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UpdateUI.resx">
       <DependentUpon>UpdateUI.cs</DependentUpon>
@@ -210,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserImageUpdateUI.resx">
       <DependentUpon>UserImageUpdateUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserProfile.resx">
+      <DependentUpon>UserProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserStatusUI.resx">
       <DependentUpon>UserStatusUI.cs</DependentUpon>

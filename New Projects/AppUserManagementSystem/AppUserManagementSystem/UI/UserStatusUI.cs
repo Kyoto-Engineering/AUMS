@@ -41,13 +41,13 @@ namespace AppUserManagementSystem.UI
            
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string q1 = "SELECT Users.UserName, Users.FullName, Designations.Designation, StatusTable.StatusName, Users.UserId  FROM Users LEFT OUTER JOIN Designations ON Users.DesignationId = Designations.DesignationId LEFT OUTER JOIN StatusTable ON Users.StatusID =  StatusTable.StatusID";
+                string q1 = "SELECT Users.UserName, Users.EmployeeId, Users.FullName, Designations.Designation, StatusTable.StatusName, Users.UserId  FROM Users LEFT OUTER JOIN Designations ON Users.DesignationId = Designations.DesignationId LEFT OUTER JOIN StatusTable ON Users.StatusID =  StatusTable.StatusID where Users.UsercatId = 1";
                 cmd = new SqlCommand(q1, con);
                 rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 dataGridView1.Rows.Clear();
             while (rdr.Read() == true)
             {
-                dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4]);
+                dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5]);
             }    
 
             con.Close();
@@ -87,13 +87,14 @@ namespace AppUserManagementSystem.UI
                 try
                 {
                     DataGridViewRow dr = dataGridView1.CurrentRow;
-                    userid = Convert.ToInt32(dr.Cells[4].Value.ToString());
+                    userid = Convert.ToInt32(dr.Cells[5].Value.ToString());
 
                     usernametxtbox.Text = dr.Cells[0].Value.ToString();
-                    fullnametxtbox.Text = dr.Cells[1].Value.ToString();
-                    designationtxtbox.Text = dr.Cells[2].Value.ToString();
-                    currentstatustxtbox.Text = dr.Cells[3].Value.ToString();
-                    useridtxtbox.Text = dr.Cells[4].Value.ToString();
+                    emplyeeidtxtbox.Text = dr.Cells[1].Value.ToString();
+                    fullnametxtbox.Text = dr.Cells[2].Value.ToString();
+                    designationtxtbox.Text = dr.Cells[3].Value.ToString();
+                    currentstatustxtbox.Text = dr.Cells[4].Value.ToString();
+                    useridtxtbox.Text = dr.Cells[5].Value.ToString();
 
 
                 }
@@ -263,6 +264,11 @@ namespace AppUserManagementSystem.UI
             //usergrdload();
 
 
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
 

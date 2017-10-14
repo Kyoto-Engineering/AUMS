@@ -32,5 +32,13 @@ namespace AppUserManagementSystem.UI
             np.ShowDialog();
             this.Visible = true;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UserProfile uf = new UserProfile();
+            this.Visible = false;
+            uf.ShowDialog();
+            this.Visible = false;
+        }
     }
 }

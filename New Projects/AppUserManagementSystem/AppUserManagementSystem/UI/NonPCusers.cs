@@ -24,5 +24,13 @@ namespace AppUserManagementSystem.UI
             bla.ShowDialog();
             this.Visible = true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            NonPcUsersGrid npuG = new NonPcUsersGrid();
+            this.Visible = false;
+            npuG.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

@@ -30,7 +30,6 @@
         {
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.backButton = new System.Windows.Forms.Button();
             this.cmbSecondaryEmail = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbPrimaryEmail = new System.Windows.Forms.ComboBox();
@@ -144,7 +143,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.backButton);
             this.groupBox1.Controls.Add(this.cmbSecondaryEmail);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmbPrimaryEmail);
@@ -185,17 +183,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Information";
-            // 
-            // backButton
-            // 
-            this.backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.backButton.ForeColor = System.Drawing.Color.Yellow;
-            this.backButton.Location = new System.Drawing.Point(845, 517);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(148, 51);
-            this.backButton.TabIndex = 18;
-            this.backButton.Text = "Back to Grid";
-            this.backButton.UseVisualStyleBackColor = false;
             // 
             // cmbSecondaryEmail
             // 
@@ -1171,7 +1158,6 @@
 
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button backButton;
         public System.Windows.Forms.ComboBox cmbSecondaryEmail;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.ComboBox cmbPrimaryEmail;
