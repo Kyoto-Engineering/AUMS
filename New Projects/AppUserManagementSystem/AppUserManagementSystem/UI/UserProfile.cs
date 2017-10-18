@@ -24,58 +24,15 @@ namespace AppUserManagementSystem.UI
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            //creating an object of ParameterField class
-            ParameterField paramField = new ParameterField();
-
-            //creating an object of ParameterFields class
-            ParameterFields paramFields = new ParameterFields();
-
-            //creating an object of ParameterDiscreteValue class
-            ParameterDiscreteValue paramDiscreteValue = new ParameterDiscreteValue();
-
-            //set the parameter field name
-            paramField.Name = "id";
-
-            //set the parameter value
-            paramDiscreteValue.Value = x;
-
-            //add the parameter value in the ParameterField object
-            paramField.CurrentValues.Add(paramDiscreteValue);
-
-            //add the parameter in the ParameterFields object
-            paramFields.Add(paramField);
-
-            //set the parameterfield information in the crystal report
-
-
-
-            viwer f2 = new viwer();
-            TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
-            TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
-            ConnectionInfo reportConInfo = new ConnectionInfo();
-            Tables tables = default(Tables);
-            //	Table table = default(Table);
-            var with1 = reportConInfo;
-            with1.ServerName = "tcp:KyotoServer,49172";
-            with1.DatabaseName = "PhoneBookDBKD22";
-            with1.UserID = "sa";
-            with1.Password = "SystemAdministrator";
-            userprofile cr = new userprofile();
-            tables = cr.Database.Tables;
-            foreach (Table table in tables)
-            {
-                reportLogonInfo = table.LogOnInfo;
-                reportLogonInfo.ConnectionInfo = reportConInfo;
-                table.ApplyLogOnInfo(reportLogonInfo);
-            }
-            f2.crystalReportViewer1.ParameterFieldInfo = paramFields;
-            //set the parameterfield information in the crystal report
-            f2.crystalReportViewer1.ReportSource = cr;
             this.Visible = false;
-
-            f2.ShowDialog();
+            GetUserProfile gup = new GetUserProfile();
+            gup.ShowDialog();
             this.Visible = true;
+
         }
     }
 }
+
+
+
+
