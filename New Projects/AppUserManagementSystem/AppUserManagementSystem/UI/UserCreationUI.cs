@@ -727,13 +727,20 @@ namespace AppUserManagementSystem.Ui
             {
                 GetSenderEMailAddress();
                 emailAddressFrom = userName + "@" + senderEmailDomain;
-                emailAddresTo = txtPrimaryUserPart.Text + "@" + cmbPrimaryDomain.Text;
+                emailAddresTo = ""+txtPrimaryUserPart.Text+"@"+cmbPrimaryDomain.Text+"-it@keal.com.bd";
                 smtpHost = "smtp." + hostName + ".com";
                 string body = "Your LogIn Id is:'" + txtLogInID.Text + "' and  Password is:'" + txtPassword.Text + "'.Thank you.";
                 MailMessage msg = new MailMessage();
                 msg.From = new MailAddress(emailAddressFrom, "Kyoto Engineering & Automation Ltd");
                 //msg.From = new MailAddress("iqbalbdrocky@gmail.com");
-                msg.To.Add(new MailAddress(emailAddresTo));
+
+                foreach (var emailaaaad in emailAddresTo.Split(new []{"-"},StringSplitOptions.RemoveEmptyEntries))
+                {
+                    msg.To.Add(new MailAddress(emailaaaad));
+                }
+               // msg.To.Add(new MailAddress(emailAddresTo));
+                
+                
                 msg.Subject = "User Id & Password";
                 msg.Body = body;
                 msg.IsBodyHtml = true;
