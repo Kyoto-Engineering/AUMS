@@ -44,6 +44,7 @@
             this.txtPassword.Size = new System.Drawing.Size(271, 26);
             this.txtPassword.TabIndex = 7;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtUserName
             // 
@@ -53,6 +54,7 @@
             this.txtUserName.Size = new System.Drawing.Size(271, 26);
             this.txtUserName.TabIndex = 6;
             this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
+            this.txtUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserName_KeyDown);
             // 
             // label2
             // 
@@ -95,6 +97,7 @@
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.loginButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.loginButton_KeyDown);
             // 
             // Loginuiaums
             // 

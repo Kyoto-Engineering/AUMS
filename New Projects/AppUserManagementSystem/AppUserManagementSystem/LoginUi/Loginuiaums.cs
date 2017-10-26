@@ -186,5 +186,33 @@ namespace AppUserManagementSystem.Log_in_Ui
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtUserName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPassword.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginButton.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void loginButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            loginButton_Click(this, new EventArgs());
+        }
+
+
+
+
+
     }
 }

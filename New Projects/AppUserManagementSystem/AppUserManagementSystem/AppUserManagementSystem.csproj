@@ -117,6 +117,18 @@
     <Compile Include="Reports\viwer.Designer.cs">
       <DependentUpon>viwer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\AppCreationConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AppCreationConsole.Designer.cs">
+      <DependentUpon>AppCreationConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ApplicationAssign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ApplicationAssign.Designer.cs">
+      <DependentUpon>ApplicationAssign.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Countries.cs" />
     <Compile Include="UI\Designations.cs" />
     <Compile Include="UI\EmailAddress.cs" />
@@ -169,6 +181,18 @@
     <Compile Include="UI\OverSeasAddress.cs" />
     <Compile Include="UI\PerManantAddress.cs" />
     <Compile Include="UI\PresentAddress.cs" />
+    <Compile Include="UI\UpdateAccessRight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UpdateAccessRight.Designer.cs">
+      <DependentUpon>UpdateAccessRight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UpdateApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UpdateApplication.Designer.cs">
+      <DependentUpon>UpdateApplication.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UpdateUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +274,12 @@
     <EmbeddedResource Include="Reports\viwer.resx">
       <DependentUpon>viwer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\AppCreationConsole.resx">
+      <DependentUpon>AppCreationConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ApplicationAssign.resx">
+      <DependentUpon>ApplicationAssign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\GetUserProfile.resx">
       <DependentUpon>GetUserProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +300,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\NonPcUserUpdateUI.resx">
       <DependentUpon>NonPcUserUpdateUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UpdateAccessRight.resx">
+      <DependentUpon>UpdateAccessRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UpdateApplication.resx">
+      <DependentUpon>UpdateApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UpdateUI.resx">
       <DependentUpon>UpdateUI.cs</DependentUpon>
