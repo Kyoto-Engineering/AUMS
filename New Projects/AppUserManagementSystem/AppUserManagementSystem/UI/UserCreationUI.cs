@@ -2278,15 +2278,14 @@ namespace AppUserManagementSystem.Ui
         {
             if (e.KeyCode == Keys.Enter)
             {
-                createUserButton.Focus();
-                e.Handled = true;
+                createUserButton_Click(this, new EventArgs());
             }
 
         }
 
         private void createUserButton_KeyDown(object sender, KeyEventArgs e)
         {
-            createUserButton_Click(this, new EventArgs());
+            
         }
 
 

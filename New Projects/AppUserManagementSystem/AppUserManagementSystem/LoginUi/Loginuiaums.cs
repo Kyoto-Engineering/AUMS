@@ -52,8 +52,8 @@ namespace AppUserManagementSystem.Log_in_Ui
                     if (rdr.HasRows)
                     {
                         userType = "COO";
-                        
-                         MainmainUI frm = new MainmainUI();
+
+                        Mainfstappear frm = new Mainfstappear();
                         this.Visible = false;
                         frm.ShowDialog();
                         this.Visible = true;
@@ -200,14 +200,13 @@ namespace AppUserManagementSystem.Log_in_Ui
         {
             if (e.KeyCode == Keys.Enter)
             {
-                loginButton.Focus();
-                e.Handled = true;
+                loginButton_Click(this, new EventArgs());
             }
         }
 
         private void loginButton_KeyDown(object sender, KeyEventArgs e)
         {
-            loginButton_Click(this, new EventArgs());
+            
         }
 
 

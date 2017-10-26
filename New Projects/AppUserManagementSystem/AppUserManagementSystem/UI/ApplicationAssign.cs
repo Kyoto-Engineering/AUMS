@@ -26,5 +26,30 @@ namespace AppUserManagementSystem.UI
         {
 
         }
+
+        private void labelSelectUserid_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FullNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SelectedAppid_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AppNamelabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AccessRightlabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
