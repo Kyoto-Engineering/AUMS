@@ -55,10 +55,11 @@
             // 
             // ApptextBox
             // 
-            this.ApptextBox.Location = new System.Drawing.Point(81, 243);
+            this.ApptextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ApptextBox.Location = new System.Drawing.Point(81, 245);
             this.ApptextBox.Multiline = true;
             this.ApptextBox.Name = "ApptextBox";
-            this.ApptextBox.Size = new System.Drawing.Size(392, 35);
+            this.ApptextBox.Size = new System.Drawing.Size(384, 35);
             this.ApptextBox.TabIndex = 4;
             this.ApptextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -71,8 +72,9 @@
             this.InsertAppbutton.Name = "InsertAppbutton";
             this.InsertAppbutton.Size = new System.Drawing.Size(142, 48);
             this.InsertAppbutton.TabIndex = 5;
-            this.InsertAppbutton.Text = "Insert App";
+            this.InsertAppbutton.Text = "Create App";
             this.InsertAppbutton.UseVisualStyleBackColor = true;
+            this.InsertAppbutton.Click += new System.EventHandler(this.InsertAppbutton_Click);
             // 
             // groupBox1
             // 
@@ -141,7 +143,9 @@
             this.Controls.Add(this.ApptextBox);
             this.Controls.Add(this.labelNewAppName);
             this.Name = "AppCreationConsole";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AppCreationConsole";
+            this.Load += new System.EventHandler(this.AppCreationConsole_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AppGrid)).EndInit();

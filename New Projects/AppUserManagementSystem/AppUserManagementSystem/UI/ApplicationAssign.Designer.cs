@@ -33,6 +33,10 @@
             this.DefAccesslevel = new System.Windows.Forms.Label();
             this.ActiveUserlabel = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,19 +49,18 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Assignbutton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SelectedAppid = new System.Windows.Forms.Label();
             this.FullNameLabel = new System.Windows.Forms.Label();
             this.labelSelectUserid = new System.Windows.Forms.Label();
             this.AppNamelabel = new System.Windows.Forms.Label();
             this.AccessRightlabel = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Assignbutton = new System.Windows.Forms.Button();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -119,11 +122,34 @@
             this.Column7,
             this.Column8,
             this.Column9,
-            this.Column10});
+            this.Column10,
+            this.Column11});
             this.dataGridView3.Location = new System.Drawing.Point(15, 436);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(472, 167);
             this.dataGridView3.TabIndex = 15;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Access Id";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "User Name";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Employee Name";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 150;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "App Name";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 150;
             // 
             // dataGridView2
             // 
@@ -133,8 +159,9 @@
             this.Column6});
             this.dataGridView2.Location = new System.Drawing.Point(15, 231);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(342, 167);
+            this.dataGridView2.Size = new System.Drawing.Size(435, 167);
             this.dataGridView2.TabIndex = 14;
+            this.dataGridView2.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick);
             // 
             // dataGridView1
             // 
@@ -148,6 +175,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(435, 167);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // Column1
             // 
@@ -184,6 +212,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.textBox1);
@@ -203,44 +233,68 @@
             // 
             // textBox3
             // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(211, 255);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(220, 28);
             this.textBox3.TabIndex = 33;
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(211, 54);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(220, 28);
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(312, 28);
             this.textBox2.TabIndex = 32;
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(211, 95);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(312, 28);
             this.textBox1.TabIndex = 31;
             // 
             // textBox5
             // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(211, 295);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(312, 28);
             this.textBox5.TabIndex = 30;
             // 
+            // Assignbutton
+            // 
+            this.Assignbutton.BackgroundImage = global::AppUserManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
+            this.Assignbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Assignbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Assignbutton.ForeColor = System.Drawing.Color.DarkGreen;
+            this.Assignbutton.Location = new System.Drawing.Point(230, 503);
+            this.Assignbutton.Name = "Assignbutton";
+            this.Assignbutton.Size = new System.Drawing.Size(166, 47);
+            this.Assignbutton.TabIndex = 29;
+            this.Assignbutton.Text = "Assign";
+            this.Assignbutton.UseVisualStyleBackColor = true;
+            this.Assignbutton.Click += new System.EventHandler(this.Assignbutton_Click);
+            // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(211, 415);
+            this.comboBox1.Location = new System.Drawing.Point(211, 416);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 28);
+            this.comboBox1.Size = new System.Drawing.Size(220, 26);
             this.comboBox1.TabIndex = 28;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // SelectedAppid
             // 
@@ -251,7 +305,7 @@
             this.SelectedAppid.Name = "SelectedAppid";
             this.SelectedAppid.Size = new System.Drawing.Size(186, 24);
             this.SelectedAppid.TabIndex = 27;
-            this.SelectedAppid.Text = "Selected App id :";
+            this.SelectedAppid.Text = "Selected App ID :";
             // 
             // FullNameLabel
             // 
@@ -262,7 +316,7 @@
             this.FullNameLabel.Name = "FullNameLabel";
             this.FullNameLabel.Size = new System.Drawing.Size(186, 24);
             this.FullNameLabel.TabIndex = 26;
-            this.FullNameLabel.Text = "Full Name :";
+            this.FullNameLabel.Text = "Employee Name :";
             // 
             // labelSelectUserid
             // 
@@ -297,6 +351,27 @@
             this.AccessRightlabel.TabIndex = 23;
             this.AccessRightlabel.Text = "Access Right Type :";
             // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(211, 136);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(312, 28);
+            this.textBox4.TabIndex = 35;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(186, 24);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Employee ID :";
+            // 
             // Column5
             // 
             this.Column5.HeaderText = "App Id";
@@ -306,42 +381,12 @@
             // 
             this.Column6.HeaderText = "App Name";
             this.Column6.Name = "Column6";
-            this.Column6.Width = 200;
+            this.Column6.Width = 300;
             // 
-            // Column7
+            // Column11
             // 
-            this.Column7.HeaderText = "Access Id";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "User Name";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Employee Name";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 150;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "App Name";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 150;
-            // 
-            // Assignbutton
-            // 
-            this.Assignbutton.BackgroundImage = global::AppUserManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
-            this.Assignbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Assignbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Assignbutton.ForeColor = System.Drawing.Color.DarkGreen;
-            this.Assignbutton.Location = new System.Drawing.Point(230, 503);
-            this.Assignbutton.Name = "Assignbutton";
-            this.Assignbutton.Size = new System.Drawing.Size(166, 47);
-            this.Assignbutton.TabIndex = 29;
-            this.Assignbutton.Text = "Assign";
-            this.Assignbutton.UseVisualStyleBackColor = true;
+            this.Column11.HeaderText = "User Type";
+            this.Column11.Name = "Column11";
             // 
             // ApplicationAssign
             // 
@@ -353,6 +398,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "ApplicationAssign";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApplicationAssign";
             this.Load += new System.EventHandler(this.ApplicationAssign_Load);
             this.groupBox1.ResumeLayout(false);
@@ -378,8 +424,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -398,5 +442,10 @@
         private System.Windows.Forms.Label labelSelectUserid;
         private System.Windows.Forms.Label AppNamelabel;
         private System.Windows.Forms.Label AccessRightlabel;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
     }
 }

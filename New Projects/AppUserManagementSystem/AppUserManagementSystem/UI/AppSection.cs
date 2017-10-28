@@ -24,5 +24,14 @@ namespace AppUserManagementSystem.UI
             acc.ShowDialog();
             this.Visible = true;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ApplicationAssign aas = new ApplicationAssign();
+            this.Visible = false;
+            aas.ShowDialog();
+            this.Visible = true;
+
+        }
     }
 }
