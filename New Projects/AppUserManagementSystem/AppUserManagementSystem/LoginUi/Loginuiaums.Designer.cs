@@ -126,7 +126,7 @@
             // 
             // PictureBox3
             // 
-            this.PictureBox3.BackgroundImage = global::AppUserManagementSystem.Properties.Resources.AccountsManagementSystemtedited1;
+            this.PictureBox3.BackgroundImage = global::AppUserManagementSystem.Properties.Resources.KAUMSIcon;
             this.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PictureBox3.Location = new System.Drawing.Point(374, -4);
             this.PictureBox3.Name = "PictureBox3";
