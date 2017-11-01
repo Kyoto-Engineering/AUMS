@@ -63,6 +63,26 @@ namespace AppUserManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AccountsManagementSystemtedited1 {
+            get {
+                object obj = ResourceManager.GetObject("AccountsManagementSystemtedited1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap banner {
+            get {
+                object obj = ResourceManager.GetObject("banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cloudCopy {
             get {
                 object obj = ResourceManager.GetObject("cloudCopy", resourceCulture);
@@ -76,6 +96,16 @@ namespace AppUserManagementSystem.Properties {
         internal static System.Drawing.Bitmap greenbutton {
             get {
                 object obj = ResourceManager.GetObject("greenbutton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logowithoutnamarked {
+            get {
+                object obj = ResourceManager.GetObject("Logowithoutnamarked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

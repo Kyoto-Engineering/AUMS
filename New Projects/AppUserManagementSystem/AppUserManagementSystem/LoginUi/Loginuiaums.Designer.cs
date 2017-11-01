@@ -106,7 +106,7 @@
             // 
             this.PictureBox2.BackgroundImage = global::AppUserManagementSystem.Properties.Resources.banner;
             this.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PictureBox2.Location = new System.Drawing.Point(297, 246);
+            this.PictureBox2.Location = new System.Drawing.Point(305, 246);
             this.PictureBox2.Name = "PictureBox2";
             this.PictureBox2.Size = new System.Drawing.Size(383, 156);
             this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -126,7 +126,7 @@
             // 
             // PictureBox3
             // 
-            this.PictureBox3.BackgroundImage = global::AppUserManagementSystem.Properties.Resources.KAUMSIcon;
+            this.PictureBox3.BackgroundImage = global::AppUserManagementSystem.Properties.Resources.AccountsManagementSystemtedited1;
             this.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PictureBox3.Location = new System.Drawing.Point(374, -4);
             this.PictureBox3.Name = "PictureBox3";
@@ -156,7 +156,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(680, 407);
+            this.ClientSize = new System.Drawing.Size(684, 411);
             this.Controls.Add(this.PictureBox2);
             this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.PictureBox3);

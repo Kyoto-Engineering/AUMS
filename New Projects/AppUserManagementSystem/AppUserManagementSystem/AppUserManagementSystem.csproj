@@ -386,6 +386,9 @@
     <Content Include="obj\Debug\AppUserManagementSystem.exe" />
     <Content Include="obj\Debug\AppUserManagementSystem.pdb" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\banner1.png" />
+    <None Include="Resources\Logowithoutnamarked1.png" />
+    <None Include="Resources\AccountsManagementSystemtedited1.png" />
     <None Include="Resources\UploadDataQ.png" />
     <None Include="Resources\cloudCopy.png" />
     <None Include="Resources\greenbutton.png" />
